@@ -67,10 +67,7 @@ body {
     .sidenavs {padding-top: 15px;}
     .sidenavs a {font-size: 18px;}
   }
-
-  #marginTop{
-      margin-top: 40px;
-  }
+  
   .selected{
       color: white !important;
       border-bottom-style: solid !important;
@@ -94,7 +91,7 @@ body {
 
   .navbtn{
     padding: 6px !important;
-    margin-left: 30px !important;
+    /* margin-left: 30px !important; */
     color: white;
   }
 
