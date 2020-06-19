@@ -1,0 +1,96 @@
+.header{
+    color: white;
+    font-size: 6vh;
+}
+
+#portfolioHeader{
+    margin-top: 2vh;
+    margin-left: 1vh;
+}
+
+.itemContainer{
+    margin-top: 3vh;
+    padding: 3.5vh;
+    border-top-style: solid;
+    border-top-color: white;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    color: white;
+    animation-name: slide;
+    animation-duration: 2s;
+}
+
+@keyframes slide{
+    0% {
+        display: none;
+        right: -400px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+
+.container{
+    height: auto;
+}
+
+.btns{
+    padding: 22px;
+    font-size: 4vh;
+    color: white;
+    border-style: none;
+    background-color: #1D1F21;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
+}
+
+.itemDesc{
+    text-align: center;
+    padding-top: 3vh;
+    padding-right: 3.3vh;
+    font-size: 2vh;
+    font-family: 'Cutive Mono', monospace;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: white;
+    /* max-height: 250px; */
+    overflow-x: scroll;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.gitLink{
+    font-size: 6vh;
+    margin-right: 2vh;
+    margin-top: 1.5vh;
+}
+
+.appImg{
+    font-size: 6vh;
+    margin-right: 6vh;
+    margin-top: 1.5vh;
+}
+
+.gifs{
+    width: 100%;
+    height: auto;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 8px;
+    margin-left: 1.2vh;
+}
+
+.itemTitle{
+    font-size: 4.2vh;
+    margin-bottom: 4vh;
+    /* border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white; */
+}

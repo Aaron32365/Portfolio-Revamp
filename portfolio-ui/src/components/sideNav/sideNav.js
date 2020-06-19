@@ -5,14 +5,14 @@ import "./sideNav.css"
 export default function SideNav(){
 
     const [navState, setNavState] = useState({
-        width: "250px"
+        width: "0px"
     })
 
     function closeNav(){
         setTimeout(() => {
             setNavState({...navState, width: "0px"})
             console.log("Closing Sidenav...")
-        }, 600);
+        }, 400);
       }
 
       function openNav(){
@@ -23,14 +23,16 @@ export default function SideNav(){
     return (
         <div>
             <div className="navbtn">
-                <span style={{cursor:"pointer", fontSize: "58px"}} onClick={openNav}>&#9776;</span>
+                <div id="marginTop">
+                    <span id="navBtnId" className="shadow" style={{cursor:"pointer", fontSize: "50px", width: "400px"}} onClick={openNav}>&#9776;</span>
+                </div>
             </div>
             <div className="sidenavs one-edge-shadow" id="mySidenav" style={{width: navState.width}}>
 
-                <NavLink to="" className="closebtn" onClick={closeNav}>x</NavLink>
+                <NavLink to="#" className="closebtn" onClick={closeNav}>x</NavLink>
                 <div className="row justify-content-center">
                     {/* <div className="col-fluid"> */}
-                        <img src={require('./images/self.jpg')} alt="self"/>
+                        <img className="shadow bigger roundedImage" src={require('./images/self.jpg')} alt="self"/>
                     {/* </div> */}
                 </div>
                 <div className="row justify-content-center">

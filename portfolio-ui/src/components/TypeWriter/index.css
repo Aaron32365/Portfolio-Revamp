@@ -1,0 +1,5 @@
+/* Setting these dimensions so that the VizSensor can spot the span initially */
+.typewriter {
+  min-height: 1px;
+  min-width: 1px;
+}

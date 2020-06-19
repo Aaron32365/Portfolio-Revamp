@@ -39,18 +39,28 @@ body {
     font-size: 36px;
     margin-left: 50px;
   }
-  
-img{
-    margin: 24px;
-    margin-top: 48px;
-    margin-bottom: 48px;
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
-    border-radius: 120px;
-    height: auto;
-    max-width: 50%;
-    /* add white border shadowing around image */
+
+.roundedImage{
+  margin: 24px;
+  margin-top: 100px !important;
+  margin-bottom: 70px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-radius: 120px;
+  height: auto;
+  max-width: 50%;
+
+}
+
+#navBtnId{
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #1D1F21;
+  margin-top: 200px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
   @media screen and (max-height: 450px) {
@@ -58,6 +68,9 @@ img{
     .sidenavs a {font-size: 18px;}
   }
 
+  #marginTop{
+      margin-top: 40px;
+  }
   .selected{
       color: white !important;
       border-bottom-style: solid !important;
@@ -83,4 +96,14 @@ img{
     padding: 6px !important;
     margin-left: 30px !important;
     color: white;
+  }
+
+  .shadow {
+    box-shadow: 1px 0px 24px -10px white!important;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+
+  .bigger:hover{
+    height: auto !important;
+    width: 62% !important;
+    box-shadow: 1px 0px 30px -15px white!important;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
   }

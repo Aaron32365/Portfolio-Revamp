@@ -1,5 +1,6 @@
-.App{
-  height: 1200px;
+.App{ 
+  font-family: 'Quantico', sans-serif;
+  height: auto;
   background-color: #1D1F21;
   /* background-color: #212326; */
 }
