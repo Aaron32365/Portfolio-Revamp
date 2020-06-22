@@ -1,0 +1,84 @@
+.itemContainer{
+    margin-top: 3vh;
+    padding: 3.5vh;
+    border-top-style: solid;
+    border-top-color: white;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    color: white;
+    animation-name: slide;
+    animation-duration: 2s;
+}
+
+@keyframes slide{
+    0% {
+        display: none;
+        right: -100vw;
+    }
+    100%{
+        right: 0px;
+    }
+}
+
+.container{
+    height: auto;
+}
+
+#skillsHeader{
+    margin-bottom: 1vh;
+    font-size: 4.4vh;
+}
+
+.icons{
+    margin-right: 2vh;
+    margin-left: 2vh;
+    font-size: 4vh;
+}
+
+.icons:hover{
+    animation-name: enlarge;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes enlarge{
+    0% {
+        font-size: 4vh;
+    }
+    100%{
+        font-size: 6vh;
+    }
+}
+
+#skillsContainer{
+    font-family: 'Cutive Mono', monospace;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+
+.tTipText{
+    display: none;
+}
+
+.tTip{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: fit-content;
+}
+
+.tTip:hover .tTipText{
+    display: block;
+    position: relative;
+    z-index: 1;
+    top: 0vh;
+    right: 0vw;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}

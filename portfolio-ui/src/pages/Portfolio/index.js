@@ -30,27 +30,31 @@ export default function Portfolio(){
                         </Section>
                     </div>
                     <div className="row">
-                        <div className="col-6 itemDesc">
-                            <Section>
-                                <TypeWrite delay={30}>
-                                    Create an account and add your upcoming events to your calendar, then add your friends and share each others schedules!
-                                </TypeWrite>
-                            </Section>
+                        <div className="col-6 itemDescContainer">
+                            <div className="col itemDesc">
+                                <Section>
+                                    <TypeWrite delay={30}>
+                                        Create an account and add your upcoming events to your calendar, then add your friends and share each others schedules!
+                                    </TypeWrite>
+                                </Section>
+                            </div>
+                            <div className="row justify-content-center">
+                                <a target="_blank" className="appImg" href="https://socialcalendar-app.herokuapp.com/Login"> <i class="devicon-heroku-original"></i> </a>
+                                <a target="_blank" className="gitLink" for="gitImg" href="https://github.com/wbrink/social-calendar"><i id="gitImg" class="devicon-github-plain"></i></a>
+                            </div>
                         </div>
                         <div className="col-6">
                             <img className="gifs shadow" src={require('./images/socialCalendar.gif')} alt="self"/>
                         </div>
                     </div>
-                    <div className="row justify-content-end">
-                        <a target="_blank" className="appImg" href="https://socialcalendar-app.herokuapp.com/Login"> <i class="devicon-heroku-original"></i> </a>
-                        <a target="_blank" className="gitLink" for="gitImg" href="https://github.com/wbrink/social-calendar"><i id="gitImg" class="devicon-github-plain"></i></a>
-                    </div>
+
+
                 </div>
                 <div className="col-12">
                     <div className="row justify-content-center">
                         <button className="col-6 btns">
                             Previous
-                        </button>
+                        </button>   
                         <button className="col-6 btns">
                             Next
                         </button>

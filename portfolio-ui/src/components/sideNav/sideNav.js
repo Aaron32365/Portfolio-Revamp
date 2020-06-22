@@ -21,9 +21,9 @@ export default function SideNav(){
       }
   
     return (
-        <div>
-            <div className="navbtn">
-                <div id="marginTop">
+        <div className="col">
+            <div className="navbtn col-3">
+                <div className="col" id="marginTop">
                     <span id="navBtnId" className="shadow" style={{cursor:"pointer", fontSize: "50px", width: "400px"}} onClick={openNav}>&#9776;</span>
                 </div>
             </div>
@@ -52,7 +52,6 @@ export default function SideNav(){
                         <NavLink className="nav-item" to="/Contact" onClick={closeNav} activeClassName="selected">Contact</NavLink>
                     </div>
                 </div>
-
             </div>
         </div>
     )
