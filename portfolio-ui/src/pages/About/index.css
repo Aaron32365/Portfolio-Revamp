@@ -3,13 +3,14 @@
     padding: 3.5vh;
     border-top-style: solid;
     border-top-color: white;
+    border-top-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: white;
-    border-top-width: 1px;
     border-bottom-width: 1px;
     color: white;
     animation-name: slide;
     animation-duration: 2s;
+    margin-bottom: 5vh;
 }
 
 @keyframes slide{
@@ -21,6 +22,8 @@
         right: 0px;
     }
 }
+
+
 
 .container{
     height: auto;
@@ -73,6 +76,7 @@
 }
 
 .tTip:hover .tTipText{
+    text-align: center;
     display: block;
     position: relative;
     z-index: 1;
@@ -82,3 +86,80 @@
     font-size: 14px;
     text-align: center;
 }
+
+.textHeader{
+    font-size: 4.4vh;
+    margin-top: 1vh;
+}
+
+.aboutContainer{
+    margin-top: 5vh;
+    border-top-style: solid;
+    border-top-color: white;
+    border-top-width: 1px;
+}
+
+.aboutParagraph{
+    margin-top: 2vh;
+    padding: 1vh;
+    min-height: 200px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 4px;
+    /* border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: white; */
+    text-align: center;
+    font-family: 'Cutive Mono', monospace;
+    letter-spacing: .2em;
+}
+
+@media only screen and (min-width: 600px) {
+    .icons{
+        font-size: 6vh;
+        padding-left: 3vw;
+    }
+
+    .tTip{
+        margin-top: 3vh ;
+        margin-bottom: 3vh;
+    }
+
+    .tTipText{
+        font-size: 30px !important;
+        text-align: initial;
+    }
+
+    .icons:hover{
+        animation-name: enlarge;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes enlarge{
+        0% {
+            font-size: 6vh;
+        }
+        100%{
+            font-size: 8vh;
+        }
+    }
+    .aboutParagraph{
+        padding: 30px;
+        font-size: 20px;
+    }
+  }
+
+  @media only screen and (min-width: 850px) {
+      .aboutParagraph{
+          font-size: 36px;
+      }
+      .aboutContainer{
+          margin-bottom: 40px;
+      }
+
+      .container{
+          padding-bottom: 40px;
+      }
+  }

@@ -8,7 +8,7 @@ export default function About(){
     return (
         <div className="col container">
             <Section>
-                <TypeWrite delay={160}>
+                <TypeWrite delay={120}>
                     <div className=" col-12 header" id="aboutHeader">
                         About
                     </div>
@@ -20,7 +20,7 @@ export default function About(){
                           <div className="col">
                               <div className="row" id="skillsHeader">
                                   <Section>
-                                      <TypeWrite delay={130}>
+                                      <TypeWrite delay={186}>
                                         Skills
                                       </TypeWrite>
                                   </Section>
@@ -127,6 +127,24 @@ export default function About(){
                                     </div>
                                 </div>
                               </div>
+                          </div>
+                      </div>
+                      <div className="row justify-content-center">
+                          <div className="col-12 aboutContainer">
+                            <div className="textHeader">
+                                <Section>
+                                    <TypeWrite delay={220}>
+                                        Who is Aaron?
+                                    </TypeWrite>
+                                </Section>
+                            </div>
+                            <div className="aboutParagraph">
+                                <Section>
+                                    <TypeWrite delay={20}>
+                                        I am a Full Stack Developer, Computer Science student, and Intelligence Analyst always looking for new opportunities to learn and grow as a developer, and as a person.
+                                    </TypeWrite>
+                                </Section>
+                            </div>
                           </div>
                       </div>
                 </div>
