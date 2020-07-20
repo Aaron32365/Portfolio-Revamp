@@ -10,11 +10,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Portfolio", {
   useCreateIndex: true,
   useFindAndModify: false
 })
-
+ 
 const mongoose_db = mongoose.connection;
+  
 
-
-// static assets
+// static assets 
 app.use(express.static(path.join(__dirname, "public")));
 
 // middleware for parsing req.body

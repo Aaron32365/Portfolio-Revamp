@@ -12,7 +12,7 @@ router.get("/api/portfolioItems", (req,res) => {
         }
         else{
             res.json(items)
-        }
+        }  
     })
 })
 
