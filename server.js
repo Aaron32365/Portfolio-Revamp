@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Portfolio", {
 })
  
 const mongoose_db = mongoose.connection;
-  
+   //test comment
 
 // static assets 
 app.use(express.static(path.join(__dirname, "public")));
