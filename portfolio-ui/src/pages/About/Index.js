@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import "./index.css"
 import TypeWrite from "../../components/TypeWriter/index"
 import Section from "../../components/Section/index"

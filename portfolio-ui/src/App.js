@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Redirect} from "react-router-dom"; //ed
 // import Home from "./pages/Home"
 import Portfolio from "./pages/Portfolio/index"
 import About from "./pages/About/Index"
+import Contact from "./pages/Contact/index"
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
         </Route>
         <Route exact path="/Portfolio" component={Portfolio}/>
         <Route exact path="/About" component={About}/>
+        <Route exact path="/Contact" component={Contact}/>
       </Router>
     </div>
   );

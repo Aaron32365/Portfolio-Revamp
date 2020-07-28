@@ -1,0 +1,53 @@
+.centerText{
+    text-align: center;
+}
+
+.formContainer{
+    text-align: center;
+    color: white;
+    margin-bottom: 24px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 12px;
+    box-shadow: 1px 0px 20px -10px white;
+}
+
+.smallText{
+    font-size: .9em;
+    font-family: 'Cutive Mono', monospace;
+}
+
+.bigText{
+    font-size: 1.15;
+}
+
+.tall{
+    min-height: 140px;
+    background-color: #E5E7E9;
+    margin-bottom: 22px;
+}
+
+.short{
+    margin-bottom: 22px;
+    min-height: 40px;
+}
+
+.submit{
+    margin-bottom: 22px;
+    
+    box-shadow: 1px 0px 20px -10px white;
+}
+
+@media only screen and (min-width: 600px) {
+    .smallText {
+        font-size: 1.8em;
+    }
+    .bigText{
+        font-size: 2.2em;
+    }
+    .formContainer{
+        font-size: 1.3em;
+    }
+}

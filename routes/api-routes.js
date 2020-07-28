@@ -11,6 +11,7 @@ router.get("/api/portfolioItems", (req,res) => {
             console.log(err)
         }
         else{
+            console.log(items)
             res.json(items)
         }
     })
