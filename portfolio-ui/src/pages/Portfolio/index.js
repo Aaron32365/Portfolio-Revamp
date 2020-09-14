@@ -5,12 +5,12 @@ import Section from "../../components/Section/index"
 import ItemTitle from "../../components/itemTitle/ItemTitle"
 import ItemContext from "../../itemContext"
 import ItemDesc from "../../components/itemDesc/itemDesc"
-// import ImgSource from "../../components/imgSource/ImgSource"
 
 export default function Portfolio(){
 
   const [portfolioItems, setPortfolioItems] = useState([])
   const [count, setCount] = useState(0)
+//   const [buttonState, setButtonState] = useState(true)
   const [portfolioItem, setPortfolioItem] = useState({
       title: "",
       description: "",
@@ -18,18 +18,22 @@ export default function Portfolio(){
       app: "",
       gifUrl: ""
   })
-    const images = require.context("./images", true)
 
-    var speed = 50
+    var speed = 18
     let i = 0;
     let j = 0;
   
     const nextItem = () => {
-        const newCount = count + 1
+        let newCount = count + 1
         console.log(count)
         console.log(newCount)
-        if(count >= portfolioItems.length){
-            setCount(0)
+        if(count > 2){
+            newCount = 1
+            setCount(newCount)
+            setPortfolioItem(portfolioItems[count]) 
+            document.getElementById("title").innerHTML = ""
+            document.getElementById("desc").innerHTML = ""
+            handleAnimations()
         }
         setCount(newCount)
         setPortfolioItem(portfolioItems[count]) 
@@ -40,12 +44,20 @@ export default function Portfolio(){
     }
 
     const previousItem = () => {
-        const newCount = count - 1
+        let newCount = count - 1
         if(count < 0){
-            count = portfolioItems.length - 1
+            newCount = portfolioItems.length - 1
+            setCount(newCount)
+            setPortfolioItem(portfolioItems[count]) 
+            document.getElementById("title").innerHTML = ""
+            document.getElementById("desc").innerHTML = ""
+            handleAnimations()
         }
         setCount(newCount)
-        setPortfolioItem(portfolioItems[count])
+        setPortfolioItem(portfolioItems[count]) 
+        document.getElementById("title").innerHTML = ""
+        document.getElementById("desc").innerHTML = ""
+        handleAnimations()
     }
 
     const handleAnimations = () => {
@@ -90,8 +102,15 @@ export default function Portfolio(){
     //       }
     // }
 
+    if(count >= 3){
+        setCount(0)
+    }
+    else if(count < 0){
+        setCount(portfolioItems.length - 1)
+    }
+
     return(
-        <ItemContext.Provider value={{portfolioItem, portfolioItems}}>
+        <ItemContext.Provider value={{portfolioItem, portfolioItems, count}}>
             <div className="col container">
             <   div className="col-12 header" id="portfolioHeader">
                     <Section>
@@ -119,8 +138,8 @@ export default function Portfolio(){
                                     </Section>
                                 </div>
                                 <div className="row justify-content-center">
-                                    <a target="_blank" className="appImg" href="https://socialcalendar-app.herokuapp.com/Login"> <i class="devicon-heroku-original"></i> </a>
-                                    <a target="_blank" className="gitLink" for="gitImg" href={portfolioItem.git}><i id="gitImg" class="devicon-github-plain"></i></a>
+                                    <a target="_blank" className="appImg" href="https://socialcalendar-app.herokuapp.com/Login"> <i className="devicon-heroku-original"></i> </a>
+                                    <a target="_blank" className="gitLink" htmlFor="gitImg" href={portfolioItem.git}><i id="gitImg" className="devicon-github-plain"></i></a>
                                 </div>
                             </div>  
                             <div className="col-6">
@@ -135,7 +154,7 @@ export default function Portfolio(){
                             <button className="col-6 btns" onClick={previousItem}>
                                 Previous
                             </button>   
-                            <button className="col-6 btns" onClick={nextItem}>
+                            <button className="col-6 btns"  onClick={nextItem}>
                                 Next
                             </button>
                         </div>
