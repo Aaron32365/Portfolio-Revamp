@@ -4,6 +4,8 @@ import TypeWrite from "../../components/TypeWriter/index"
 import Section from "../../components/Section/index"
 import ItemTitle from "../../components/itemTitle/ItemTitle"
 import ItemContext from "../../itemContext"
+import ItemDesc from "../../components/itemDesc/itemDesc"
+// import ImgSource from "../../components/imgSource/ImgSource"
 
 export default function Portfolio(){
 
@@ -16,64 +18,113 @@ export default function Portfolio(){
       app: "",
       gifUrl: ""
   })
+    const images = require.context("./images", true)
 
+    var speed = 50
+    let i = 0;
+    let j = 0;
+  
     const nextItem = () => {
-        setCount(count + 1)
+        const newCount = count + 1
+        console.log(count)
+        console.log(newCount)
+        if(count >= portfolioItems.length){
+            setCount(0)
+        }
+        setCount(newCount)
+        setPortfolioItem(portfolioItems[count]) 
+        document.getElementById("title").innerHTML = ""
+        document.getElementById("desc").innerHTML = ""
+        handleAnimations()
+        /////////////
+    }
+
+    const previousItem = () => {
+        const newCount = count - 1
+        if(count < 0){
+            count = portfolioItems.length - 1
+        }
+        setCount(newCount)
+        setPortfolioItem(portfolioItems[count])
+    }
+
+    const handleAnimations = () => {
+        typeDesc()
+        typeTitle()
+    }
+
+    const typeTitle = () => {
+        if (i < portfolioItems[count].title.length) {
+            document.getElementById("title").innerHTML += portfolioItems[count].title.charAt(i);
+            i++;
+            setTimeout(typeTitle, speed);
+          }
+    }
+
+    const typeDesc = () => {
+        if (j < portfolioItems[count].description.length) {
+            document.getElementById("desc").innerHTML += portfolioItems[count].description.charAt(j);
+            j++;
+            setTimeout(typeDesc, speed);
+          }
     }
 
     useEffect( ()=> {
+        setCount(1)
         fetch('/api/portfolioItems')
         .then(response => response.json())
         .then(data => {
-            console.log("Data: " + JSON.stringify(data))
+            console.log(data)
             setPortfolioItems(data)
-            // setPortfolioItem(JSON.stringify(data[count]))
             setPortfolioItem({title: data[count].title, description: data[count].description, git: data[count].git, gifUrl: data[count].gifUrl})
-            console.log(data[count].title)
+            // typeWriter()
+
         });
     },[])
 
+    // const typeWrite = () => {
+    //     if (i < txt.length) {
+    //         document.getElementById("demo").innerHTML += txt.charAt(i);
+    //         i++;
+    //         setTimeout(typeWrite, speed);
+    //       }
+    // }
+
     return(
-        <ItemContext.Provider value={portfolioItem}>
+        <ItemContext.Provider value={{portfolioItem, portfolioItems}}>
             <div className="col container">
-                <Section>
-                    <TypeWrite delay={120}>
-                        <div className="col-12 header" id="portfolioHeader">
+            <   div className="col-12 header" id="portfolioHeader">
+                    <Section>
+                        <TypeWrite delay={120}>
                             Portfolio
-                        </div>
-                    </TypeWrite>
-                </Section>
+                        </TypeWrite>
+                    </Section>
+                </div>
                 <div className="row justify-content-center">
                     <div className="col-11 itemContainer">
-                        <div className="row justify-content-center itemTitle">
-                            {/* {portfolioItem.title} */}
-                            {/* <Section>
-                                <TypeWrite delay={60}> */}
+                        <div className="row justify-content-center itemTitle" id="title">
+                            <Section>
+                                <TypeWrite delay={100}>
                                     <ItemTitle/>
-                                {/* </TypeWrite>
-                            </Section> */}
-                            {/* <Section>
-                                <TypeWrite delay={60}>
-                                    Social Calendar
                                 </TypeWrite>
-                            </Section> */}
+                            </Section>
                         </div>
                         <div className="row">
                             <div className="col-6 itemDescContainer">
-                                <div className="col itemDesc">
+                                <div className="col itemDesc" id="desc">
                                     <Section>
                                         <TypeWrite delay={30}>
-                                            Create an account and add your upcoming events to your calendar, then add your friends and share each others schedules!
+                                            <ItemDesc/>
                                         </TypeWrite>
                                     </Section>
                                 </div>
                                 <div className="row justify-content-center">
                                     <a target="_blank" className="appImg" href="https://socialcalendar-app.herokuapp.com/Login"> <i class="devicon-heroku-original"></i> </a>
-                                    <a target="_blank" className="gitLink" for="gitImg" href="https://github.com/wbrink/social-calendar"><i id="gitImg" class="devicon-github-plain"></i></a>
+                                    <a target="_blank" className="gitLink" for="gitImg" href={portfolioItem.git}><i id="gitImg" class="devicon-github-plain"></i></a>
                                 </div>
-                            </div>
+                            </div>  
                             <div className="col-6">
-                                <img className="gifs shadow" src={require('./images/socialCalendar.gif')} alt="self"/>
+                                <img className="gifs shadow" src={`${process.env.PUBLIC_URL}/images/${portfolioItem.gifUrl}.gif`} alt="self"/>
                             </div>
                         </div>
 
@@ -81,7 +132,7 @@ export default function Portfolio(){
                     </div>
                     <div className="col-12">
                         <div className="row justify-content-center">
-                            <button className="col-6 btns">
+                            <button className="col-6 btns" onClick={previousItem}>
                                 Previous
                             </button>   
                             <button className="col-6 btns" onClick={nextItem}>
@@ -92,6 +143,6 @@ export default function Portfolio(){
                 </div>
                 {/* add in next and last buttons under the itemcontainer */}
             </div>
-        </ItemContext.Provider>
+         </ItemContext.Provider>
     )
 }

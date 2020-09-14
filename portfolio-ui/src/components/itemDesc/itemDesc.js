@@ -4,15 +4,14 @@ import Section from "../Section/index"
 import ItemContext from "../../itemContext"
 
 
-export default function ItemTitle(){
+export default function ItemDesc(){
     const context = useContext(ItemContext)
-    console.log(context)
-    // console.log(props)
+
     return (
         <div>
             <Section>
-                <TypeWrite delay={100}>
-                    {context.portfolioItem.title}
+                <TypeWrite delay={30}>
+                    {context.portfolioItem.description}
                 </TypeWrite>
             </Section>
         </div>
