@@ -1,3 +1,11 @@
+a:hover{
+    color: #E64F4F;
+}
+
+button:hover{
+    color: #E64F4F;
+}
+
 .header{
     color: white;
     font-size: 6vh;
