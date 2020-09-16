@@ -35,6 +35,13 @@ app.get("*", (req,res) => {
 
 const PORT = process.env.PORT || 3001;
 
+app.get('*', function(_, res) {
+  res.sendFile(path.join(__dirname, './portfolio-ui/build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 mongoose_db.once("open", function() {
   app.listen(PORT, () => {console.log("Server Listening on Port", PORT)});
