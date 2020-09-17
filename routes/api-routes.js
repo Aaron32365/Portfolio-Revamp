@@ -1,42 +1,30 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const express = require('express');
+const PortfolioModel = require('../model/Item');
+const app = express();
 
-const router = express.Router();
+app.get('/portfolioItems', async (req, res) => {
+  const portfolio = await PortfolioModel.find({});
 
-const db = require("../model");
+  try {
+      console.log(JSON.stringify(portfolio))
+    res.send(portfolio);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
 
-router.get("/api/portfolioItems", (req,res) => {
-    db.PortfolioItem.find({}, (err, items) => {
-        if(err){
-            console.log(err)
-        }
-        else{
-            console.log(items)
-            res.json(items)
-        }
-    })
-})
 
-router.get("/api/test", (req,res) => {
-    res.json({"good":"togo"})
-})
+app.post('/addItem', async (req, res) => {
+    const item = new PortfolioModel(req.body);
+  
+    try {
+      await item.save();
+      res.send(item);
+    } catch (err) {
+      res.status(500).send(err);
+    }
+  });
 
-router.post("/api/addItem", (req, res) => {
-    const {title, description, app, git, gifUrl} = req.body
-    db.PortfolioItem.create({
-        title: title,
-        description: description,
-        app: app,
-        git: git,
-        gifUrl: gifUrl
-    }, (err, doc) => {
-        if(err){
-            console.log(err)
-        }
-        else{
-            res.json(doc)
-        }
-    })
-})
 
-module.exports = router
+
+module.exports = app

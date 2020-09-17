@@ -83,7 +83,7 @@ export default function Portfolio(){
 
     useEffect( ()=> {
         setCount(1)
-        fetch('/api/portfolioItems')
+        fetch('/portfolioItems')
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -93,14 +93,6 @@ export default function Portfolio(){
 
         });
     },[])
-
-    // const typeWrite = () => {
-    //     if (i < txt.length) {
-    //         document.getElementById("demo").innerHTML += txt.charAt(i);
-    //         i++;
-    //         setTimeout(typeWrite, speed);
-    //       }
-    // }
 
     if(count >= 3){
         setCount(0)
