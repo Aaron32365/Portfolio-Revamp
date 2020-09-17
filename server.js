@@ -13,14 +13,14 @@ mongoose.connect(`mongodb+srv://Aaron32365:${process.env.PASS}@cluster0.arnyw.mo
 });
 
 // static assets
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 // middleware for parsing req.body
-app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname,'portfolio-ui/build')))
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static("social-calendar-ui/build"));
+  app.use(express.static("portfolio-ui/build"));
 }
 
 const mongoose_db = mongoose.connection;
