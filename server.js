@@ -28,8 +28,12 @@ const mongoose_db = mongoose.connection;
 // api routes
 app.use(require("./routes/api-routes"));
 
-app.get("*", (req,res) => {
-  res.sendFile(path.join(__dirname, "/portfolio-ui/build/index.html"));
+app.get('*', function(_, res) {
+  res.sendFile(path.join(__dirname, './portfolio-ui/build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
 })
 
 mongoose_db.once("open", function() {
