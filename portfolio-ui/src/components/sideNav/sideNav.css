@@ -49,6 +49,7 @@ body {
   border-width: 1px;
   border-radius: 120px;
   height: auto;
+  width: auto;
   max-width: 50%;
 
 }
