@@ -48,9 +48,11 @@ body {
   border-color: white;
   border-width: 1px;
   border-radius: 120px;
+  /* height: auto !important; */
+  /* width: auto ; */
+  /* max-width: 50% ; */
+  width: 52%;
   height: auto;
-  width: auto;
-  max-width: 50%;
 
 }
 
@@ -104,4 +106,8 @@ body {
     height: auto !important;
     width: 62% !important;
     box-shadow: 1px 0px 30px -15px white!important;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+
+  #marginTop{
+    margin-top: 22px;
   }

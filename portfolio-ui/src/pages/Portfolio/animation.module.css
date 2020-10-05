@@ -1,0 +1,17 @@
+.type {
+    padding: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: animated-text 1.2s steps(33,end) 1s 1 normal both;
+  }
+  
+  /* text animation */
+  
+  /* .type[typeWrite='1']{
+    animation: animated-text 2s steps(33,end) 1s 1 normal both;
+  } */
+
+  @keyframes animated-text{
+    from{width: 0;}
+    to{width: 100%;}
+  }
