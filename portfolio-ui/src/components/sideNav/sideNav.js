@@ -30,26 +30,26 @@ export default function SideNav(){
             <div className="sidenavs one-edge-shadow" id="mySidenav" style={{width: navState.width}}>
 
                 <NavLink to="#" className="closebtn" onClick={closeNav}>x</NavLink>
-                <div className="row justify-content-center">
-                    {/* <div className="col-fluid"> */}
-                        <img className="shadow bigger roundedImage" src={require('./images/self.jpg')} alt="self"/>
-                    {/* </div> */}
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-fluid">
-                        <NavLink className="nav-item" to="/Portfolio" onClick={closeNav} activeClassName="selected">Portfolio</NavLink>
+                <div className="links-container">
+                    <div className="row justify-content-center">
+                        {/* <div className="col-fluid"> */}
+                            <img className="shadow bigger roundedImage" src={require('./images/self.jpg')} alt="self"/>
+                        {/* </div> */}
                     </div>
-                </div>
-
-                <div className="row justify-content-center">
-                    <div className="col-fluid">
-                        <NavLink className="nav-item" to="/About" onClick={closeNav} activeClassName="selected">About</NavLink>
+                    <div className="row justify-content-center">
+                        <div className="col-fluid">
+                            <NavLink className="nav-item" to="/Portfolio" onClick={closeNav} activeClassName="selected">Portfolio</NavLink>
+                        </div>
                     </div>
-                </div>
-
-                <div className="row justify-content-center">
-                    <div className="col-fluid">
-                        <NavLink className="nav-item" to="/Contact" onClick={closeNav} activeClassName="selected">Contact</NavLink>
+                    <div className="row justify-content-center">
+                        <div className="col-fluid">
+                            <NavLink className="nav-item" to="/About" onClick={closeNav} activeClassName="selected">About</NavLink>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-fluid">
+                            <NavLink className="nav-item" to="/Contact" onClick={closeNav} activeClassName="selected">Contact</NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
